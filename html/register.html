@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+    <form method="POST" action="display" accept-charset="UTF-8">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <hr>
+        <div class="form-group">
+            <label for="emp_name">Employee Name :</label>
+            <input class="form-control" name="emp_name" type="text" id="emp_name" placeholder="Please enter name here">
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID :</label>
+            <input class="form-control" name="email" type="text" id="email" placeholder="Please enter email here" >
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone :</label>
+            <input class="form-control" name="phone" type="text" id="phone" placeholder="Please enter phone number here">
+        </div>
+        <div class="form-group">
+            <label for="pass">Password :</label>
+            <input class="form-control" name="pass" type="password" value="" id="pass" placeholder="Please enter password here">
+        </div>
+        <div class="form-group">
+            <label for="conf_pass">Confirm Password :</label>
+            <input class="form-control" name="conf_pass" type="password" value="" id="conf_pass" placeholder="Please reenter password here">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" value="Register">
+        </div>
+
+    </form>
+
+</div>
+<script>
+
+
+    function getLocation() {
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    }
+
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude =position.coords.longitude;
+//            alert( "latitude is: "+latitude);
+        var dataString = 'latitude'+latitude+'longitude'+longitude;
+
+
+//            alert(dataString);
+//            $.ajax({
+//                type: "POST",
+//                dataType: "json",
+//                url: "PagesController.php",
+//                data: {latitude: latitude},
+////                data: {latitude: latitude, longitude: longitude},
+////                data: latitude,
+//
+//            });
+
+//            $.ajax({
+//                type: "POST",
+//                url: "PagesController.php",
+//                data: {latitude: latitude, longitude: longitude},
+//            });
+//            $.ajax({
+//                url: 'PagesController.php',
+//                type: 'POST',
+//                data: {latitude: latitude},
+//                dataType: 'json',
+//                success: function(info){
+//                    console.log(info);
+//                }
+//
+//            });
+    }
+    getLocation();
+</script>
+
+</body>
+</html>

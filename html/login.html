@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <form method="POST" action="login_display" accept-charset="UTF-8">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+        <!--<input name="_token" type="hidden" value="0i1oA5juuxRWBN0ABkkDyfX6lDkuuGhLYB307pDh">-->
+
+        <h1>Login</h1>
+        <hr>
+
+        <div class="form-group">
+            <label for="email">Email ID :</label>
+            <input class="form-control" name="email" type="text" id="email" placeholder="Please enter email here">
+        </div>
+        <div class="form-group">
+            <label for="password">Password :</label>
+            <input  class="form-control" name="password" type="password" value="" id="password" placeholder="Please enter password here">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" value="Login">
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>
