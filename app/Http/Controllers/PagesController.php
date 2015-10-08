@@ -21,11 +21,11 @@ class PagesController extends Controller
     public function display(){
 
         $users = provider_regs::latest('regi_at')->get();
-        return view('display',compact('users'));
+        return view('pages.display',compact('users'));
     }
     public function register(){
-        View::addExtension('html', 'php');
-        return view('register');
+//        View::addExtension('html', 'php');
+        return view('pages.register');
     }
 
     public function store(CreateRegistrationRequest $request){

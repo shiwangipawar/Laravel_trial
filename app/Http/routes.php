@@ -15,6 +15,6 @@ Route::get('register','PagesController@register');
 Route::post('display','PagesController@store');
 Route::get('display','PagesController@display');
 Route::get('login','UserController@getLogin');
-Route::post('login_display','UserController@postLogin');
+Route::post('afterlogin','UserController@postLogin');
 
 

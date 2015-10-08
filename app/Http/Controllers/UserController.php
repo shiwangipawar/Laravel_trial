@@ -16,8 +16,8 @@ use View;
 class UserController extends Controller
 {
     public function getLogin(){
-        View::addExtension('html', 'php');
-        return view('login');
+//        View::addExtension('html', 'php');
+        return view('pages.login');
 
     }
     public function postLogin(Request $request){
@@ -29,18 +29,21 @@ class UserController extends Controller
 
         foreach($users as $dbdata){
             if($dbdata->email == $input['email'] && $dbdata->pass == $input['password'])
+            {
                 $flag = 1;
+                break;
+            }
             else
                 $flag = 0;
         }
         if($flag){
-            View::addExtension('html', 'php');
+//            View::addExtension('html', 'php');
                 return redirect('display');
         }
         else{
-            View::addExtension('html', 'php');
-//            return redirect('login')->withErrors(['email'=>'Please Register']);
-                return redirect('login');
+//            View::addExtension('html', 'php');
+            return redirect('login')->withErrors(['email'=>'Please Register']);
+//                return redirect('login');
         }
     }
 }

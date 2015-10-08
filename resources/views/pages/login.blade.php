@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 {{--    {!! Form::open(['url' => 'display']) !!}--}}
-    {{--    {!! Form::open() !!}--}}
+{{--        {!! Form::open() !!}--}}
     {!! Form::open(array('action' => 'UserController@postLogin','method' => 'post')) !!}
 
     <h1>Login</h1>

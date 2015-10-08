@@ -33,7 +33,7 @@
     </div>
 
     {!! Form::close() !!}
-{{--</form>--}}
+
     @if($errors->any())
         <ul class="alert alert-danger">
             @foreach($errors->all() as $error)
@@ -41,7 +41,6 @@
                 @endforeach
         </ul>
     @endif
-
 
     <script>
 
@@ -60,15 +59,6 @@
             var longitude =position.coords.longitude;
 //            alert( "latitude is: "+latitude);
             var dataString = 'latitude'+latitude+'longitude'+longitude;
-
-
-
-
-
-
-
-
-
 
 
 //            alert(dataString);
